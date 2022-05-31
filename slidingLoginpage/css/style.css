@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* padding: 20px 60px; */
+    transition:0.5s;
+    background-image: linear-gradient(to right, #6dcde6 30%,#f0a4d7 100% );
+}
+
+body .active{
+    background: #6dcde6 10%;
+    
+}
+
+.container{
+    position: relative;
+    width: 880px;
+    height: 500px;
+    margin: 20px;
+    /* background: #5c93c7ef; */
+}
+.bluebg{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background: rgba(255, 255, 255 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0,0.15);
+}
+
+.bluebg .box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bluebg .box h2{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.bluebg .box button{
+    cursor: pointer;
+    padding: 10px 20px;
+    color: rgb(8, 8, 8);
+    background: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    /* border-radius: 30px; */
+}
+
+.formBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #ebbddb ;
+    background-image: linear-gradient(to right,#f0a4d7 100% );
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.5px 4px 6px 11px rgba(176, 216, 207, 0.25);
+    /* border-radius: 30px; */
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.formBx.active{
+    left: 50%;
+}
+
+.formBx .form{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s;
+}
+.formBx.active .signinForm{
+    left: -100%;
+    transition-delay:0.25s ;
+}
+.formBx .signinForm{
+
+    transition-delay:0.25s ;
+}
+
+.formBx.active .signupForm{
+    left:0;
+    transition-delay:0s ;
+}
+
+.formBx .signupForm{
+    left: 100%;
+    transition-delay:0.25s ;
+}
+.formBx .form form{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formBx .form form h3{
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.formBx .form form input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333;
+
+}
+
+.formBx .form form input[type="submit"]{
+    background: #cf67cf;
+    border: none;
+    color: #fff;
+    max-width: 100px;
+    cursor: pointer;
+}
+
+.formBx.active .signupForm input[type="submit"]{
+    background: #106d85;
+    /* border: #171818; */
+
+}
+
+.formBx .form form .forgot{
+    color: #333;
+
+}
+
+@media(max-width:991px){
+    .container{
+        max-width: 400px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+    .container .bluebg{
+        top: 0;
+        height: 100%;
+    }
+    .formBx{
+        width: 100%;
+        height: 500px;
+        top: 0;
+        box-shadow: none;
+    }
+    .bluebg .box{
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: 0;
+    }
+
+    .box.signin{
+        top: 0;
+
+    }
+    .formBx.active{
+        left: 0;
+        top: 150px;
+    }
+}
